@@ -1,2 +1,2 @@
-@Library('code-build@master') _
+@Library('code-build@main') _
 terraform()
