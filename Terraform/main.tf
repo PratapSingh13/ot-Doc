@@ -106,7 +106,7 @@ resource "aws_instance" "ubuntu-pub" {
   tenancy                     = var.tenancy
   monitoring                  = var.monitoring
   #ipv6_addresses             = var.ipv6_address
-  key_name                    = "ASGKEY"
+  key_name                    = "ASGKEY
   security_groups             = [aws_security_group.My_VPC_Security_Group.id]
 
   tags = {
