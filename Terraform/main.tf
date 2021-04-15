@@ -101,7 +101,6 @@ resource "aws_instance" "ubuntu-pub" {
   availability_zone           = data.aws_availability_zones.available.names[0]
   count                       = var.instanceCount
   subnet_id                   = aws_subnet.Public-Subnet.id
-  user_data                   = var.userData
   tenancy                     = var.tenancy
   monitoring                  = var.monitoring
   key_name                    = "ASGKEY"
