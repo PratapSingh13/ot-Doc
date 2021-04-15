@@ -103,10 +103,6 @@ variable "instanceCount" {
   description = "Number of Instance to launch"
 }
 
-variable "userData" {
-  default = "null"
-}
-
 variable "tenancy" {
   default     = "default"
   description = "This is the Tenancy of the Instance"
