@@ -95,7 +95,7 @@ variable "amiID" {
 }
 
 variable "instanceType" {
-  default = "t2.micro"
+  default = "t1.2xlarge"
 }
 
 variable "instanceCount" {
