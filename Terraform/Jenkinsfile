@@ -1,2 +1,8 @@
-@Library('code-build@main') _
-terraform()
+@Library("shared-library") _
+node 
+{
+    terraformWorkflow.call(
+        configFilePath: "config.properties"
+    )
+
+}
