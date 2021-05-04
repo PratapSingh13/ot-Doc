@@ -48,3 +48,7 @@ module "alb_listener" {
 - `subnets_id` - List of Subnet IDs (Note-: `Use every subnets from different AZs`)
 - `enable_deletion_protection` - Protecting from deletion
 - `alb_tags_map` - List of some ALB tags (Ex- `Name`)
+- `tg_details` - List of Target Group details (default: `tgname` `tgport` `tgprotocol` `target_type`) 
+- `vpc_ID` - Provide VPC ID (Ex- `"vpc-0391267e62cf0cff1"`)
+- `target_id` - List of Target IDs which you want to register with your Target Group (Ex- `["i-069894aabebcd6b23", "i-08ed634a42bc9859a"]`)
+- `listner_details` - List of Listner details (Ex- `forwardprotocol = "HTTP"`)
