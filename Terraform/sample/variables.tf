@@ -152,8 +152,8 @@ variable "listener_details" {
   }
 }
 
-variable "target_group_arn" {
-  description = "Put Target Group arn value"
-  type        = string
-  #default     = "arn:aws:elasticloadbalancing:us-east-1:836096864812:targetgroup/da-TG/2827a5c3253e780f"
-}
+# variable "target_group_arn" {
+#   description = "Put Target Group arn value"
+#   type        = string
+#   #default     = "arn:aws:elasticloadbalancing:us-east-1:836096864812:targetgroup/da-TG/2827a5c3253e780f"
+# }
