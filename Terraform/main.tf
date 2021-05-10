@@ -1,46 +1,47 @@
 module "security_group" {
-  source = "https://github.com/PratapSingh13/ot-DocASAP/tree/main/Terraform/security_group.git"
-  sg_name = var.sg_name
-  vpc_id  = var.vpc_id
-  sg_ingress = [
+  source       = "https://github.com/PratapSingh13/ot-DocASAP/tree/main/Terraform/security_group.git"
+  sg_name      = var.sg_name
+  vpc_id       = var.vpc_id
+   sg_name_tag = "test-sg" 
+  sg_ingress   = [
     {
-      description     = "For HTTPS request at port 443"
+      description      = "For HTTPS request at port 443"
       from_port        = 443
       to_port          = 443
-      protocol        = "tcp"
+      protocol         = "tcp"
       cidr_blocks      = ["10.0.0.0/24"]
-      self            = false
-      security_groups = []
+      self             = false
+      security_groups  = []
     },
     {
-      description     = "For HTTP request at port 80"
+      description      = "For HTTP request at port 80"
       from_port        = 80
       to_port          = 80
-      protocol        = "tcp"
+      protocol         = "tcp"
       cidr_blocks      = ["10.0.0.0/24"]
-      self            = true
-      security_groups = []
+      self             = true
+      security_groups  = []
     },
     {
-      description     = "For SSH request at port 22"
+      description      = "For SSH request at port 22"
       from_port        = 22
       to_port          = 22
-      protocol        = "tcp"
+      protocol         = "tcp"
       cidr_blocks      = ["10.0.0.0/24"]
-      self            = false
-      security_groups = []
+      self             = false
+      security_groups  = []
     }
   ]
 
   sg_egress = [
     {
-      description     = ""
+      description      = ""
       from_port        = 0
       to_port          = 0
-      protocol        = -1
+      protocol         = -1
       cidr_blocks      = ["0.0.0.0/0"]
-      self            = false
-      security_groups = []
+      self             = false
+      security_groups  = []
     }
   ]
 }
