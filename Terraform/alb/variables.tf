@@ -44,10 +44,10 @@ variable "idle_timeout" {
   default     = 60
 }
 
-variable "alb_log_bucket" {
-  description = "Name of S3 bucket where log will store"
-  type        = string
-}
+# variable "alb_log_bucket" {
+#   description = "Name of S3 bucket where log will store"
+#   type        = string
+# }
 
 variable "alb_enable_logging" {
   description = "Do you want logging enable: true for yes"
