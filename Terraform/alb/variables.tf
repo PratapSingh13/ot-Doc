@@ -49,11 +49,11 @@ variable "idle_timeout" {
 #   type        = string
 # }
 
-# variable "alb_enable_logging" {
-#   description = "Do you want logging enable: true for yes"
-#   type        = bool
-#   default     = false
-# }
+variable "alb_enable_logging" {
+  description = "Do you want logging enable: true for yes"
+  type        = bool
+  default     = false
+}
 
 #Variables for alb_listener
 variable "target_group_arn" {
