@@ -23,12 +23,6 @@ variable "target_group_details" {
   }
 }
 
-variable "vpc_id" {
-  description = "VPC ID for your TargetGroup"
-  type        = string
-  default     = "vpc-0391267e62cf0cff1"
-}
-
 variable "healthy_threshold" {
   description = "Number of consecutive health checks successes required before considering an unhealthy target healthy"
   type        = number
