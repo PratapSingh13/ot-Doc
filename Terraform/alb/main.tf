@@ -8,11 +8,11 @@ resource "aws_lb" "alb" {
   tags                       = var.alb_tags
   idle_timeout               = var.idle_timeout
   drop_invalid_header_fields = var.drop_invalid_header_fields
-  access_logs {
-  #bucket          = var.alb_log_bucket
-  #prefix          = format("%s-alb", var.alb_name)
-  enabled         = var.alb_enable_logging
-  }
+#   access_logs {
+#   bucket          = var.alb_log_bucket
+#   prefix          = format("%s-alb", var.alb_name)
+#   enabled         = var.alb_enable_logging
+#   }
 }
 
 resource "aws_lb_listener" "alb_https_listener" {
