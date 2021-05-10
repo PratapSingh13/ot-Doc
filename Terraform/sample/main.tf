@@ -73,7 +73,7 @@ module "alb_and_alb_listeners" {
   idle_timeout                          = var.idle_timeout
   alb_tags                              = var.alb_tags
 #   alb_log_bucket                        = var.alb_log_bucket
-#   alb_enable_logging                    = var.alb_enable_logging
+  alb_enable_logging                    = var.alb_enable_logging
   target_group_arn                      = module.target_group_and_target_group_attachment.target_group_arn
   listener_details                      = var.listener_details
 }
