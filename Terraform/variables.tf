@@ -1,0 +1,12 @@
+#Variables for Security Group
+variable "sg_name" {
+  description = "Name of your Security Group"
+  type        = string
+  default     = "da-test-sg"
+}
+
+variable "vpc_id" {
+  description = "Give your vpc id here"
+  type        = string
+  default     = "vpc-0391267e62cf0cff1"
+}
