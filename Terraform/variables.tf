@@ -1,12 +1,47 @@
-#Variables for Security Group
 variable "sg_name" {
-  description = "Name of your Security Group"
+  description = "Give the name of your SecurityGroup"
   type        = string
-  default     = "da-test-sg"
+  default     = "tf-SG"
+}
+
+variable "sg_name_tag" {
+  default     = "test-sg"
+  type        = string
+  description = "This is Security Group tag name"
 }
 
 variable "vpc_id" {
-  description = "Give your vpc id here"
+  description = "Give your VPC Id for Security Group"
   type        = string
-  default     = "vpc-0391267e62cf0cff1"
+}
+
+variable "sg_ingress" {
+  description = "List of Ingerss Ports and CIDRs"
+  type = list(object(
+    {
+      description     = string
+      from_port       = number
+      to_port         = number
+      protocol        = string
+      cidr_blocks     = list(string)
+      self            = bool
+      security_groups = list(string)
+    }
+  ))
+
+}
+
+variable "sg_egress" {
+  description = "Egress Ports and CIDRs"
+  type = list(object(
+    {
+      description     = string
+      from_port       = number
+      to_port         = number
+      protocol        = string
+      cidr_blocks     = list(string)
+      self            = bool
+      security_groups = list(string)
+    }
+  ))
 }

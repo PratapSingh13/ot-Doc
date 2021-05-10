@@ -1,47 +1,35 @@
-module "security_group" {
-  source       = "https://github.com/PratapSingh13/ot-DocASAP/tree/main/Terraform/security_group.git"
-  sg_name      = var.sg_name
-  vpc_id       = var.vpc_id
-   sg_name_tag = "test-sg" 
-  sg_ingress   = [
-    {
-      description      = "For HTTPS request at port 443"
-      from_port        = 443
-      to_port          = 443
-      protocol         = "tcp"
-      cidr_blocks      = ["10.0.0.0/24"]
-      self             = false
-      security_groups  = []
-    },
-    {
-      description      = "For HTTP request at port 80"
-      from_port        = 80
-      to_port          = 80
-      protocol         = "tcp"
-      cidr_blocks      = ["10.0.0.0/24"]
-      self             = true
-      security_groups  = []
-    },
-    {
-      description      = "For SSH request at port 22"
-      from_port        = 22
-      to_port          = 22
-      protocol         = "tcp"
-      cidr_blocks      = ["10.0.0.0/24"]
-      self             = false
-      security_groups  = []
-    }
-  ]
+resource "aws_security_group" "security_group" {
+  name   = var.sg_name
+  vpc_id = var.vpc_id
 
-  sg_egress = [
-    {
-      description      = ""
-      from_port        = 0
-      to_port          = 0
-      protocol         = -1
-      cidr_blocks      = ["0.0.0.0/0"]
-      self             = false
-      security_groups  = []
+  dynamic "ingress" {
+    for_each = var.sg_ingress
+
+    content {
+      description     = ingress.value.description
+      from_port       = ingress.value.from_port
+      to_port         = ingress.value.to_port
+      protocol        = ingress.value.protocol
+      cidr_blocks     = ingress.value.cidr_blocks
+      self            = ingress.value.self
+      security_groups = ingress.value.security_groups
     }
-  ]
+  }
+
+  dynamic "egress" {
+    for_each = var.sg_egress
+
+    content {
+      description     = egress.value.description
+      from_port       = egress.value.from_port
+      to_port         = egress.value.to_port
+      protocol        = egress.value.protocol
+      cidr_blocks     = egress.value.cidr_blocks
+      self            = egress.value.self
+      security_groups = egress.value.security_groups
+    }
+  }
+  tags = {
+    Name = var.sg_name_tag
+  }
 }
