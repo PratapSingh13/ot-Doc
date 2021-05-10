@@ -2,7 +2,6 @@
 node 
 {
     terraformWorkflow.call(
-        configFilePath: "Terraform/config.properties"
+        configFilePath: "Terraform/sample/config.properties"
     )
-
 }
