@@ -135,11 +135,11 @@ variable "idle_timeout" {
 #   default     = "final-tf-state"
 # }
 
-variable "alb_enable_logging" {
-  description = "Do you want to enable logging"
-  type        = bool
-  default     = false
-}
+# variable "alb_enable_logging" {
+#   description = "Do you want to enable logging"
+#   type        = bool
+#   default     = false
+# }
 
 #Variables for ALB Listeners
 variable "listener_details" {
