@@ -1,6 +1,13 @@
 variable "sg_name" {
   description = "Give the name of your SecurityGroup"
   type        = string
+  default     = "tf-SG"
+}
+
+variable "sg_name_tag" {
+  default     = "test-sg"
+  type        = string
+  description = "This is Security Group tag name"
 }
 
 variable "vpc_id" {
