@@ -129,17 +129,17 @@ variable "idle_timeout" {
   default     = 60
 }
 
-variable "alb_log_bucket" {
-  description = "Bucket name for alb logs store"
-  type        = string
-  default     = "final-tf-state"
-}
+# variable "alb_log_bucket" {
+#   description = "Bucket name for alb logs store"
+#   type        = string
+#   default     = "final-tf-state"
+# }
 
-variable "alb_enable_logging" {
-  description = "Do you want to enable logging"
-  type        = bool
-  default     = true
-}
+# variable "alb_enable_logging" {
+#   description = "Do you want to enable logging"
+#   type        = bool
+#   default     = true
+# }
 
 #Variables for ALB Listeners
 variable "listener_details" {
