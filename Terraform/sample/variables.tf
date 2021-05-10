@@ -103,11 +103,11 @@ variable "subnets_id" {
   default     = ["subnet-019228e2e83037c84", "subnet-00c5f377a8c037c6a"]
 }
 
-variable "alb_security_groups_ids" {
-  description = "A list of Security Groups"
-  type        = list(string)
-  default     = ["sg-087b864592b3fd821"]
-}
+# variable "alb_security_groups_ids" {
+#   description = "A list of Security Groups"
+#   type        = list(string)
+#   default     = ["sg-087b864592b3fd821"]
+# }
 
 variable "alb_tags" {
   description = "Resource Tags"
