@@ -66,7 +66,7 @@ module "alb_and_alb_listeners" {
   source                                = "github.com/PratapSingh13/ot-DocASAP//Terraform/alb"
   alb_name                              = var.alb_name
   internal_alb                          = var.internal
-  alb_security_groups_ids               = var.alb_security_groups_ids
+  alb_security_groups_ids               = module.security_group.sg_id
   subnets_id                            = var.subnets_id
   enable_deletion_protection            = var.enable_deletion_protection
   drop_invalid_header_fields            = var.drop_invalid_header_fields
