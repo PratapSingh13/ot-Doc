@@ -78,3 +78,28 @@ module "alb_and_alb_listeners" {
   listener_details                      = var.listener_details
 }
 
+module "lt_and_asg" {
+  # details for launch template
+  source                 = "github.com/PratapSingh13/ot-DocASAP//Terraform/asg"
+  lt_name                = var.launch_template_name
+  ami_id                 = var.ami_id
+  instance_type          = var.instance_type
+  key_name               = var.key_name
+  vpc_security_group_ids = [module.security_group.sg_id]
+  lt_tags                = var.additional_tags
+  iam_instance_profile = [{
+    arn = var.iam_instance_profile_arn
+  }]
+  lt_description = var.lt_description
+  user_data      = filebase64("../script.sh")
+
+  # details for auto scaling group
+  asg_name         = var.asg_name
+  max_size         = var.max_size
+  min_size         = var.min_size
+  desired_capacity = var.desired_capacity
+  subnet_ids       = var.subnets_id
+  asg_tags         = var.additional_tags_asg
+  target_group_arn = module.target_group_and_target_group_attachment.target_group_arn
+}
+
