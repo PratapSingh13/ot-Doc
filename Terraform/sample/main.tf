@@ -91,7 +91,7 @@ module "lt_and_asg" {
     arn = var.iam_instance_profile_arn
   }]
   lt_description = var.lt_description
-  user_data      = filebase64("../script.sh")
+  user_data      = filebase64("../asg/script.sh")
 
   # details for auto scaling group
   asg_name         = var.asg_name
