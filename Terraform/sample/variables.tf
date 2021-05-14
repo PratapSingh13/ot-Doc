@@ -8,7 +8,7 @@ variable "sg_name" {
 variable "vpc_id" {
   description = "Give your vpc id here"
   type        = string
-  default     = "vpc-0391267e62cf0cff"
+  default     = "vpc-0391267e62cf0cff1"
 }
 
 #Variables for TargetGroup
