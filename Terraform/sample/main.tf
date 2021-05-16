@@ -1,5 +1,5 @@
 module "security_group" {
-  source       = "git::https://github.com/PratapSingh13/ot-DocASAP.git"
+  source       = "git::https://github.com/PratapSingh13/ot-DocASAP//Terraform/security_group"
   sg_name      = var.sg_name
   vpc_id       = var.vpc_id
   sg_name_tag  = "test-sg" 
