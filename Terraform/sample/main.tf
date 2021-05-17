@@ -1,7 +1,7 @@
 module "security_group" {
   source       = "../security_group"
   sg_name      = var.sg_name
-  vpc_id       = var.vpc_iD
+  vpc_id       = var.vpc_id
   sg_name_tag  = "test-sg" 
   sg_ingress   = [
     {
