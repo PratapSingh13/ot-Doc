@@ -1,6 +1,5 @@
 @Library("shared-library") _
 node 
 {
-    gitSecrets.provisionReporting(
-    )
+    gitSecrets.provisionReporting()
 }
